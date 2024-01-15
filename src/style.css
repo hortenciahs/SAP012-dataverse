@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{ 
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    background-image: linear-gradient(#333, #333);
+    overflow: hidden;
+}
+
+.card .img{
+    background-image: ('https://i.pinimg.com/originals/5b/32/e2/5b32e222a6cc8635a8dd3fbbbce56733.png');
+    background-position: center;
+    background-size: cover;
+    width: 360px;
+    height: 200px;
+}
