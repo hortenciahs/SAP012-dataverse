@@ -20,7 +20,7 @@ body {
 }
 
 .card .img{
-    background-image: ('https://i.pinimg.com/originals/5b/32/e2/5b32e222a6cc8635a8dd3fbbbce56733.png');
+    background-image: url('./assets/pikachu.png');
     background-position: center;
     background-size: cover;
     width: 360px;
