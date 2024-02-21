@@ -5,9 +5,10 @@ import data from './data/dataset.js';
 
 let cardsExibidos = data;
 const listaHobby = document.querySelector("#root");
+
 document.addEventListener("DOMContentLoaded", () => {
   listaHobby.appendChild(renderItems(data))
-})
+});
 // listaHobby.appendChild(renderItems(data));
 // filtro de dados 
 const selCategoria = document.querySelector('[name="filtroCategoria"]');
@@ -16,7 +17,7 @@ selCategoria.addEventListener('change', (event) => {
 
   const mostrarCategoria = event.target.value;
 
-  cardsExibidos = filterBy(data, 'categoriaHobby', mostrarCategoria)
+  cardsExibidos = filterBy(cardsExibidos, 'categoriaHobby', mostrarCategoria)
   listaHobby.innerHTML = ""
   listaHobby.appendChild(renderItems(cardsExibidos))
 
@@ -30,7 +31,7 @@ selOrdem.addEventListener('change', (event) => {
 
   const mostrarOrdem = event.target.value;
 
-  cardsExibidos = sortBy(data, 'custoParaIniciar', mostrarOrdem)
+  cardsExibidos = sortBy(cardsExibidos, 'custoParaIniciar', mostrarOrdem)
   listaHobby.innerHTML = ""
   listaHobby.appendChild(renderItems(cardsExibidos))
 })
@@ -38,11 +39,20 @@ selOrdem.addEventListener('change', (event) => {
 // botao de limpar
 
 
-const button = document.getElementById('[data-testid="botao-limpar"]');
+const mostrarTodos = document.querySelector('[data-testid="button-clear"]');
 
-button.addEventListener('click', () => {
-  listaHobby.innerHTML = ""; 
-  listaHobby.appendChild(renderItems(originalCards)); 
+mostrarTodos.addEventListener("click", () => {
+  // zera a lista de cards
+  listaHobby.innerHTML = "";
+
+  // zera o sort
+  selOrdem.value = "buscar";
+
+  // zera o filter
+  selCategoria.value = "Todos"; 
+
+  // renderia novamente
+  listaHobby.appendChild(renderItems(data)); 
 })  
 
 // função computestats
