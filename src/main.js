@@ -1,6 +1,6 @@
 import { filterBy, sortBy} from './dataFunctions.js';
 import { renderItems } from './view.js';
-import data from './data/dataset.js';
+import data from './data/dataset.js'; 
 
 
 let cardsExibidos = data;

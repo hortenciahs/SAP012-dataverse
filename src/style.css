@@ -169,10 +169,10 @@ background: #ddb6d8;
              text-align: center;
 }
 /* fonte do Google */
-raleway-<uniquifier> {
+ralewayuniquifier {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: weight;
   font-style: normal;
 }
 
