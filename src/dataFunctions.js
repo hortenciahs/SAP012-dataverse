@@ -28,3 +28,40 @@ export const sortBy = (data, sortBy, value) => {
   }
 }
 
+const calcularCustoMedio = (data)=>{
+// resultado é o acumulador
+//o 0 é o mesmo que 'const valorInicial = 0;'
+
+const somaTotal = data.reduce(
+  (resultado, data) => {
+    resultado = resultado + data.facts.custoParaIniciar;
+    console.log(resultado)
+    return resultado
+  },
+  0
+);
+
+console.log("resultado final: " + somaTotal);
+console.log("media final: " + somaTotal / data.length);
+}
+const calcularNivelMedioDeDificuldade = (data)=> {
+  const somaTotal = data.reduce(
+    (resultado, data) => {
+      resultado = resultado + data.facts.nivelDeDificuldade;
+      console.log(resultado)
+      return resultado
+    },
+    0
+  );
+  
+  console.log("resultado final: " + somaTotal);
+  console.log("media final: " + somaTotal / data.length);
+
+}
+export const computeStats = (data)=>{
+const mediaCusto = calcularCustoMedio (data)
+const mediaNivelDificuldade = calcularNivelMedioDeDificuldade (data)
+return {
+  mediaCusto, mediaNivelDificuldade
+}
+}

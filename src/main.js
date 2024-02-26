@@ -1,4 +1,4 @@
-import { filterBy, sortBy} from './dataFunctions.js';
+import { filterBy, sortBy, computeStats} from './dataFunctions.js';
 import { renderItems } from './view.js';
 import data from './data/dataset.js'; 
 
@@ -8,6 +8,17 @@ const listaHobby = document.querySelector("#root");
 
 document.addEventListener("DOMContentLoaded", () => {
   listaHobby.appendChild(renderItems(data))
+  computeStats(data)
+  const spanMediaCusto = document.createElement("span");
+  const spanMediaNivelDificuldade = document.createElement("span");
+  spanMediaCusto.textContent = `Média de Custo: ${spanMediaCusto}`;
+  spanMediaNivelDificuldade.textContent = `Média de Nível de Dificuldade: ${spanMediaNivelDificuldade}`;
+  const statsContainer = document.getElementById("calcularNivelMedioDeDificuldade");
+  statsContainer.appendChild(spanMediaCusto);
+  statsContainer.appendChild(spanMediaNivelDificuldade);
+  const statsContainer2  = document.getElementById("custoParaIniciar");
+  statsContainer2.appendChild(spanMediaCusto);
+  statsContainer2.appendChild(spanMediaNivelDificuldade);
 });
 // listaHobby.appendChild(renderItems(data));
 // filtro de dados 
@@ -16,8 +27,7 @@ const selCategoria = document.querySelector('[name="filtroCategoria"]');
 selCategoria.addEventListener('change', (event) => {
 
   const mostrarCategoria = event.target.value;
-
-  cardsExibidos = filterBy(cardsExibidos, 'categoriaHobby', mostrarCategoria)
+  cardsExibidos = filterBy(data, 'categoriaHobby', mostrarCategoria)
   listaHobby.innerHTML = ""
   listaHobby.appendChild(renderItems(cardsExibidos))
 
@@ -53,9 +63,11 @@ mostrarTodos.addEventListener("click", () => {
 
   // renderia novamente
   listaHobby.appendChild(renderItems(data)); 
-})  
+}) 
 
-// função computestats
+
+
+// função computestats OK
 // colocar um span no html com id e o texto resultados
 // usar template string  ex. ${cards} resultados
 // usar reduce

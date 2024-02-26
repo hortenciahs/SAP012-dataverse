@@ -16,7 +16,9 @@ h1, h2 {
     color: #574755;
     font-family:Arial, Helvetica, sans-serif;
 }
-
+.calcularNivelMedioDeDificuldade{
+  border:2px solid #000;
+}
 h2 {
 font-family: "Raleway", sans-serif;
 font-weight: 300;
@@ -164,12 +166,12 @@ color: #422a55;
 margin-bottom: 4px;
 width: 100%;
 background: #ddb6d8;
-/* box-shadow:  -6px 6px 9px #cea9c9,
-             6px -6px 9px #ecc3e7; */
-             text-align: center;
+ box-shadow:  -6px 6px 9px #cea9c9,
+             6px -6px 9px #ecc3e7; 
+ text-align: center;
 }
 /* fonte do Google */
-ralewayuniquifier {
+raleway-<uniquifier> {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-weight: weight;
@@ -177,13 +179,13 @@ ralewayuniquifier {
 }
 
 /* ondas */
-.custom-shape-divider-top-1707265856 {
+ .custom-shape-divider-top-1707265856 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
-  line-height: 0;
+  line-height: 0; 
 }
 
 .custom-shape-divider-top-1707265856 svg {
