@@ -35,33 +35,33 @@ const calcularCustoMedio = (data)=>{
 const somaTotal = data.reduce(
   (resultado, data) => {
     resultado = resultado + data.facts.custoParaIniciar;
-    console.log(resultado)
+    //console.log(resultado)
     return resultado
   },
   0
 );
-
-console.log("resultado final: " + somaTotal);
-console.log("media final: " + somaTotal / data.length);
+  return parseFloat(somaTotal/data.length)
+//console.log("resultado final: " + somaTotal);
+//console.log("media final: " + somaTotal / data.length);
 }
 const calcularNivelMedioDeDificuldade = (data)=> {
   const somaTotal = data.reduce(
     (resultado, data) => {
       resultado = resultado + data.facts.nivelDeDificuldade;
-      console.log(resultado)
+      //console.log(resultado)
       return resultado
     },
     0
   );
-  
-  console.log("resultado final: " + somaTotal);
-  console.log("media final: " + somaTotal / data.length);
+  return parseFloat(somaTotal/data.length)
+  //console.log("resultado final: " + somaTotal);
+  //console.log("media final: " + somaTotal / data.length);
 
 }
 export const computeStats = (data)=>{
 const mediaCusto = calcularCustoMedio (data)
 const mediaNivelDificuldade = calcularNivelMedioDeDificuldade (data)
 return {
-  mediaCusto, mediaNivelDificuldade
+  mediaCusto:mediaCusto.toFixed(2) ,mediaNivelDificuldade:mediaNivelDificuldade.toFixed(2)
 }
 }

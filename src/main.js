@@ -1,4 +1,4 @@
-import { filterBy, sortBy, computeStats} from './dataFunctions.js';
+/*import { filterBy, sortBy, computeStats} from './dataFunctions.js';
 import { renderItems } from './view.js';
 import data from './data/dataset.js'; 
 
@@ -8,17 +8,18 @@ const listaHobby = document.querySelector("#root");
 
 document.addEventListener("DOMContentLoaded", () => {
   listaHobby.appendChild(renderItems(data))
-  computeStats(data)
-  const spanMediaCusto = document.createElement("span");
-  const spanMediaNivelDificuldade = document.createElement("span");
-  spanMediaCusto.textContent = `Média de Custo: ${spanMediaCusto}`;
-  spanMediaNivelDificuldade.textContent = `Média de Nível de Dificuldade: ${spanMediaNivelDificuldade}`;
+  const stats = computeStats(data) 
+  const mediaCusto = document.querySelector("span");
+  const mediaNivelDificuldade = document.querySelector("span");
+  mediaCusto.textContent = `Média de Custo: ${stats.mediaCusto}`;
+  mediaNivelDificuldade.textContent = `Média de Nível de Dificuldade: ${stats.mediaNivelDificuldade}`;
   const statsContainer = document.getElementById("calcularNivelMedioDeDificuldade");
-  statsContainer.appendChild(spanMediaCusto);
-  statsContainer.appendChild(spanMediaNivelDificuldade);
+  statsContainer.appendChild(mediaCusto);
+  statsContainer.appendChild(mediaNivelDificuldade);
   const statsContainer2  = document.getElementById("custoParaIniciar");
-  statsContainer2.appendChild(spanMediaCusto);
-  statsContainer2.appendChild(spanMediaNivelDificuldade);
+  statsContainer2.appendChild;
+  console.log(mediaNivelDificuldade);
+  
 });
 // listaHobby.appendChild(renderItems(data));
 // filtro de dados 
@@ -28,6 +29,7 @@ selCategoria.addEventListener('change', (event) => {
 
   const mostrarCategoria = event.target.value;
   cardsExibidos = filterBy(data, 'categoriaHobby', mostrarCategoria)
+  
   listaHobby.innerHTML = ""
   listaHobby.appendChild(renderItems(cardsExibidos))
 
@@ -63,7 +65,57 @@ mostrarTodos.addEventListener("click", () => {
 
   // renderia novamente
   listaHobby.appendChild(renderItems(data)); 
-}) 
+}) */
+
+import { filterBy, sortBy, computeStats } from './dataFunctions.js';
+import { renderItems } from './view.js';  // Certifique-se de ter um arquivo view.js com a função renderItems implementada.
+import data from './data/dataset.js';
+
+let cardsExibidos = data;
+const listaHobby = document.querySelector("#root");
+
+document.addEventListener("DOMContentLoaded", () => {
+  listaHobby.appendChild(renderItems(data));
+
+  const statsContainer = document.getElementById("calcularNivelMedioDeDificuldade");
+  const statsContainer2 = document.getElementById("custoParaIniciar");
+
+  const selCategoria = document.querySelector('[name="filtroCategoria"]');
+  const selOrdem = document.querySelector('[name="ordem"]');
+
+  selCategoria.addEventListener('change', (event) => {
+    const mostrarCategoria = event.target.value;
+    cardsExibidos = filterBy(data, 'categoriaHobby', mostrarCategoria);
+    listaHobby.innerHTML = "";
+    listaHobby.appendChild(renderItems(cardsExibidos));
+
+    // Limpa as estatísticas antes de calcular e exibir
+    statsContainer.innerHTML = "";
+    statsContainer2.innerHTML = "";
+
+    // Calcula e exibe as estatísticas
+    const stats = computeStats(cardsExibidos);
+    const mediaCustoParaIniciar = document.createElement("span");
+    const mediaNivelDificuldade = document.createElement("span");
+
+    mediaCustoParaIniciar.textContent = `Média de Custo para Iniciar: ${stats.mediaCusto}`;
+    mediaNivelDificuldade.textContent = `Média de Nível de Dificuldade: ${stats.mediaNivelDificuldade}`;
+
+    statsContainer.appendChild(mediaNivelDificuldade);
+    statsContainer2.appendChild(mediaCustoParaIniciar);
+  });
+
+  selOrdem.addEventListener('change', (event) => {
+    const mostrarOrdem = event.target.value;
+    cardsExibidos = sortBy(cardsExibidos, 'custoParaIniciar', mostrarOrdem);
+    listaHobby.innerHTML = "";
+    listaHobby.appendChild(renderItems(cardsExibidos));
+  });
+
+  // Restante do seu código permanece inalterado...
+});
+
+
 
 
 
