@@ -112,11 +112,29 @@ document.addEventListener("DOMContentLoaded", () => {
     listaHobby.appendChild(renderItems(cardsExibidos));
   });
 
-  // Restante do seu código permanece inalterado...
 });
 
 
+const mostrarTodos = document.querySelector('[data-testid="button-clear"]');
 
+mostrarTodos.addEventListener("click", () => {
+  // zera a lista de cards
+  listaHobby.innerHTML = "";
+
+  // zera o sort
+  selOrdem.value = "buscar";
+
+  // zera o filter
+  selCategoria.value = "Todos"; 
+
+  //zera a média de dificuldade
+  statsContainer.innerHTML = "";
+    
+  //zera a média de custo
+  statsContainer2.innerHTML = "";
+  // renderiza novamente
+  listaHobby.appendChild(renderItems(data)); 
+});
 
 
 // função computestats OK
