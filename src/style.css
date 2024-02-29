@@ -16,9 +16,7 @@ h1, h2 {
     color: #574755;
     font-family:Arial, Helvetica, sans-serif;
 }
-.calcularNivelMedioDeDificuldade{
-  border:2px solid #000;
-}
+
 h2 {
 font-family: "Raleway", sans-serif;
 font-weight: 300;
@@ -43,7 +41,7 @@ margin-bottom: 70px;
 
   
 
-button{
+button {
   font-size: 16px;
   border: #ddb6d8 solid;
   border-radius: 18px;
@@ -58,7 +56,7 @@ select {
   border: #ddb6d8 solid;
   /* border-radius: 18px; */
   height: 50px;
-  width: 270px;
+  width: 320px;
   text-align: center;
   letter-spacing: 2px;
 }
@@ -69,7 +67,7 @@ select option {
   /* background-color: #cea9c9; */
   border-radius: 18px;
   height: 50px;
-  width: 250px;
+  width: 320px;
   text-align: center;
   letter-spacing: 4px;
   /* line-height: 2; */
@@ -99,15 +97,35 @@ select option {
 .containerLi {
   border-radius: 42px;
 background: #ddb6d8;
-/* box-shadow:  -6px 6px 9px #ac7da6,
-             6px -6px 9px #ecc3e7; */
-  /* border-radius:25px;
-  background-color: #bd8ff4c4; */
   width: 272px;
   height: 460px;
   display: flex;
   justify-content: center;
 }
+/* divs das estatiticas */
+#custoParaIniciar, #calcularNivelMedioDeDificuldade {
+  /* border-radius: 42px; */
+  background: hsl(309, 43%, 84%);
+  align-items: center;
+    width: 320px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+}
+/* div feita para alinhar as stats */
+.estatisticas{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
 /* div com menu dropdown filtro, botão e menu dropdown ordenação */
   .containerFiltro{
     margin-top: 60px;

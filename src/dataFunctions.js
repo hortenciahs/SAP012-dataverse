@@ -32,14 +32,13 @@ const calcularCustoMedio = (data)=>{
 // resultado é o acumulador
 //o 0 é o mesmo que 'const valorInicial = 0;'
 
-const somaTotal = data.reduce(
-  (resultado, data) => {
-    resultado = resultado + data.facts.custoParaIniciar;
-    //console.log(resultado)
-    return resultado
-  },
-  0
-);
+  const somaTotal = data.reduce(
+    (resultado, data) => {
+      resultado = resultado + data.facts.custoParaIniciar;
+      return resultado
+    },
+    0
+  );
   return parseFloat(somaTotal/data.length)
 //console.log("resultado final: " + somaTotal);
 //console.log("media final: " + somaTotal / data.length);
@@ -59,9 +58,9 @@ const calcularNivelMedioDeDificuldade = (data)=> {
 
 }
 export const computeStats = (data)=>{
-const mediaCusto = calcularCustoMedio (data)
-const mediaNivelDificuldade = calcularNivelMedioDeDificuldade (data)
-return {
-  mediaCusto:mediaCusto.toFixed(2) ,mediaNivelDificuldade:mediaNivelDificuldade.toFixed(2)
-}
+  const mediaCusto = calcularCustoMedio (data)
+  const mediaNivelDificuldade = calcularNivelMedioDeDificuldade (data)
+  return {
+    mediaCusto:mediaCusto.toFixed(2) ,mediaNivelDificuldade:mediaNivelDificuldade.toFixed(2)
+  }
 }

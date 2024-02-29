@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const statsContainer2 = document.getElementById("custoParaIniciar");
 
   const selCategoria = document.querySelector('[name="filtroCategoria"]');
-  const selOrdem = document.querySelector('[name="ordem"]');
+  const selOrdem = document.querySelector("#ordenacao");
 
   selCategoria.addEventListener('change', (event) => {
     const mostrarCategoria = event.target.value;
@@ -105,6 +105,8 @@ document.addEventListener("DOMContentLoaded", () => {
     statsContainer2.appendChild(mediaCustoParaIniciar);
   });
 
+
+
   selOrdem.addEventListener('change', (event) => {
     const mostrarOrdem = event.target.value;
     cardsExibidos = sortBy(cardsExibidos, 'custoParaIniciar', mostrarOrdem);
@@ -116,6 +118,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const mostrarTodos = document.querySelector('[data-testid="button-clear"]');
+const statsContainer = document.querySelector('#calcularNivelMedioDeDificuldade'); 
+const statsContainer2 = document.querySelector('#custoParaIniciar'); 
+const selOrdem = document.querySelector('#ordenacao');
+const selCategoria = document.querySelector('#filtro');
 
 mostrarTodos.addEventListener("click", () => {
   // zera a lista de cards
@@ -128,12 +134,14 @@ mostrarTodos.addEventListener("click", () => {
   selCategoria.value = "Todos"; 
 
   //zera a média de dificuldade
-  statsContainer.innerHTML = "";
+  statsContainer.innerHTML = "Media Nível de Dificuldade: 0";
     
   //zera a média de custo
-  statsContainer2.innerHTML = "";
+  statsContainer2.innerHTML = "Media Custo: R$0,00";
+
   // renderiza novamente
   listaHobby.appendChild(renderItems(data)); 
+
 });
 
 
