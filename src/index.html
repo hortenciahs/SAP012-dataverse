@@ -7,13 +7,15 @@
   <title>Data Verse</title>
   <!-- favicon -->
   <link rel="icon" type="image/x-icon" href="\data\Favicon\favicon.ico">
-<!-- fim do favicon -->
+  <!-- fim do favicon -->
   <link rel="stylesheet" href="style.css" />
   <!-- fonte do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <!-- ondas -->
     <div class="custom-shape-divider-top-1707265856">
@@ -27,13 +29,18 @@
   <header>
     <h1>Qual o hobby ideal para você?</h1>
   </header>
- 
+  
   <main>
     <h2>Descubra qual hobby você mais se identifica de forma simples e objetiva!</h2>
     <!-- divs computestats -->
-<div class="estatisticas">
-  <div class="calcularNivelMedioDeDificuldade" id="calcularNivelMedioDeDificuldade">
-    <span>Media Nível de Dificuldade: 0 </span>
+    <div class="estatisticas">
+      <div class="calcularNivelMedioDeDificuldade" id="calcularNivelMedioDeDificuldade">
+        <span>Media Nível de Dificuldade: 0 </span>
+      </div>
+  
+      <div id="custoParaIniciar">
+        <span>Media Custo: R$0,00</span>
+      </div>
     </div>
 
   <div id="custoParaIniciar">
@@ -42,17 +49,17 @@
 </div>
   <!-- divs select e botão mostrar todos -->
     <div class="containerFiltro">
-    <section class="ordenacao">
-      <label for="ordenacao"></label>
-      <select data-testid="selecionar-ordenar" name="ordem" id="ordenacao">
-        <option value="buscar">Buscar por custo</option>
-        <option value="asc">Menor Custo</option>
-        <option value="desc">Maior Custo</option>
-      </select>
+      <section class="ordenacao">
+        <label for="ordenacao"></label>
+        <select data-testid="select-sort" name="sort-order" id="ordenacao">
+          <option value="buscar">Buscar por custo</option>
+          <option value="asc">Menor Custo</option>
+          <option value="desc">Maior Custo</option>
+        </select>
       </section>
       <section class="filtros">
         <label for="filtro"></label>
-        <select data-testid="selecionar-filtro" name="filtroCategoria" id="filtro">
+        <select data-testid="select-filter" name="filtroCategoria" id="filtro">
           <option value="Todos">Buscar por categoria</option>
           <option value="artesanato">Artesanato</option>
           <option value="beleza">Beleza</option>
@@ -68,9 +75,9 @@
   </main>
   <section id="root">
     <!-- Aqui irão conter todos os cards -->
-  </section> 
+  </section>
   <footer>Hortência Silva, Jéssica Ramos e Marcela Ferraz</footer>
   <script src="main.js" type="module"></script>
-</body>
-
-</html>
+  </body>
+  
+  </html>

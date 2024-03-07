@@ -36,16 +36,16 @@ Esse projeto foi desenvolvido por Jessica Ramos, Hortência Viana e Marcela Ferr
 * A aplicação permite à usuária reiniciar a aplicação, limpando filtros e ordenamentos, com um botão "Mostrar todos".
 * As aplicações de filtrar, limpar, ordenar, não recarregam a página, mas sim adicionam conteúdo de maneira dinâmica via JavaScript.
 
-
+<img src="src\data\readme\reeadme.gif"> 
 
 ## 5. Geração de dados / Protótipo
 * Os dados foram gerados através de prompt no Bing conforme a imagem abaixo:
 
-//aqui conterá o print do nosso prompt 
+<img src="src\data\readme\prompt_readme.png">
 
  Os dados foram salvos em um arquivo JavaScript, que exporta uma matriz com 24 objetos. A estrutura de cada objeto é a seguinte:
 
-//aqui conterá o print da geração de dados de um único card
+<img src="src\data\readme\card_hobby.png">
 
 
 

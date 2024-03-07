@@ -60,23 +60,23 @@ const listaHobby = document.querySelector("#root");
 document.addEventListener("DOMContentLoaded", () => {
   listaHobby.appendChild(renderItems(data));
 
-  const statsContainer = document.getElementById("calcularNivelMedioDeDificuldade");
+  const statsContainer = document.getElementById(
+    "calcularNivelMedioDeDificuldade"
+  );
   const statsContainer2 = document.getElementById("custoParaIniciar");
 
   const selCategoria = document.querySelector('[name="filtroCategoria"]');
-  const selOrdem = document.querySelector("#ordenacao");
+  const selOrdem = document.querySelector('[data-testid="select-sort"]');
 
-  selCategoria.addEventListener('change', (event) => {
+  selCategoria.addEventListener("change", (event) => {
     const mostrarCategoria = event.target.value;
-    cardsExibidos = filterBy(data, 'categoriaHobby', mostrarCategoria);
+    cardsExibidos = filterBy(data, "categoriaHobby", mostrarCategoria);
     listaHobby.innerHTML = "";
     listaHobby.appendChild(renderItems(cardsExibidos));
 
-    // Limpa as estatísticas antes de calcular e exibir
     statsContainer.innerHTML = "";
     statsContainer2.innerHTML = "";
 
-    // Calcula e exibe as estatísticas
     const stats = computeStats(cardsExibidos);
     const mediaCustoParaIniciar = document.createElement("span");
     const mediaNivelDificuldade = document.createElement("span");
@@ -88,23 +88,21 @@ document.addEventListener("DOMContentLoaded", () => {
     statsContainer2.appendChild(mediaCustoParaIniciar);
   });
 
-
-
-  selOrdem.addEventListener('change', (event) => {
+  selOrdem.addEventListener("change", (event) => {
     const mostrarOrdem = event.target.value;
-    cardsExibidos = sortBy(cardsExibidos, 'custoParaIniciar', mostrarOrdem);
+    cardsExibidos = sortBy(cardsExibidos, "custoParaIniciar", mostrarOrdem);
     listaHobby.innerHTML = "";
     listaHobby.appendChild(renderItems(cardsExibidos));
   });
-
 });
 
-
 const mostrarTodos = document.querySelector('[data-testid="button-clear"]');
-const statsContainer = document.querySelector('#calcularNivelMedioDeDificuldade'); 
-const statsContainer2 = document.querySelector('#custoParaIniciar'); 
-const selOrdem = document.querySelector('#ordenacao');
-const selCategoria = document.querySelector('#filtro');
+const statsContainer = document.querySelector(
+  "#calcularNivelMedioDeDificuldade"
+);
+const statsContainer2 = document.querySelector("#custoParaIniciar");
+const selOrdem = document.querySelector("#ordenacao");
+const selCategoria = document.querySelector("#filtro");
 
 mostrarTodos.addEventListener("click", () => {
   // zera a lista de cards
@@ -114,21 +112,14 @@ mostrarTodos.addEventListener("click", () => {
   selOrdem.value = "buscar";
 
   // zera o filter
-  selCategoria.value = "Todos"; 
+  selCategoria.value = "Todos";
 
   //zera a média de dificuldade
-  statsContainer.innerHTML = "Media Nível de Dificuldade: 0";
-    
+  statsContainer.innerHTML = "Média Nível de Dificuldade: 0";
+
   //zera a média de custo
-  statsContainer2.innerHTML = "Media Custo: R$0,00";
+  statsContainer2.innerHTML = "Média Custo: R$0,00";
 
   // renderiza novamente
-  listaHobby.appendChild(renderItems(data)); 
-
+  listaHobby.appendChild(renderItems(data));
 });
-
-
-// função computestats OK
-// colocar um span no html com id e o texto resultados
-// usar template string  ex. ${cards} resultados
-// usar reduce
