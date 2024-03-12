@@ -1,0 +1,215 @@
+header {
+  margin: 0%;
+}
+
+body {
+  background-color: #f3def0;
+  margin: 0%;
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  margin-top: 100px;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #574755;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(46, 18, 53, 0),
+    #a0889d,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+#root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 75px;
+  margin-bottom: 70px;
+}
+
+button {
+  font-size: 16px;
+  border: #ddb6d8 solid;
+  border-radius: 18px;
+  height: 50px;
+  width: 290px;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+}
+
+select {
+  font-size: 16px;
+  font-size: 16px;
+  border: #ddb6d8 solid;
+  height: 50px;
+  width: 320px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+select option {
+  font-size: 16px;
+  font-size: 16px;
+  border: #ddb6d8 solid;
+  border-radius: 18px;
+  height: 50px;
+  width: 320px;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+/* todo a disposição dos cards */
+.container {
+  padding-left: 0%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 150px;
+  gap: 30px;
+}
+
+.textoCard {
+  margin-top: 10px;
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: 1.3;
+  color: rgb(20, 17, 17);
+}
+/* borda dos cards, tamanho, cor, sombra e display */
+.containerLi {
+  border-radius: 42px;
+  background: #ddb6d8;
+  width: 272px;
+  height: 460px;
+  display: flex;
+  justify-content: center;
+}
+/* divs das estatiticas */
+#custoParaIniciar,
+#calcularNivelMedioDeDificuldade {
+  background: hsl(309, 43%, 84%);
+  align-items: center;
+  width: 320px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+}
+/* div feita para alinhar as stats */
+.estatisticas {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* div com menu dropdown filtro, botão e menu dropdown ordenação */
+.containerFiltro {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+ul.container {
+  border: #cd8eff;
+  display: flex;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+/* texto fixo ex. categoria  */
+dt {
+  display: flex;
+  justify-content: center;
+}
+
+/* parte dinâmina do texto do card ex. beleza */
+dd {
+  display: inline-block;
+  width: 75%;
+  margin-left: 10%;
+}
+/* todo o card */
+dl {
+  display: inline-block;
+}
+.imagem_card {
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
+  align-items: center;
+  margin-top: 10px;
+}
+.tituloHobby {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+footer {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  color: #422a55;
+  margin-bottom: 4px;
+  width: 100%;
+  background: #ddb6d8;
+  box-shadow: -6px 6px 9px #cea9c9, 6px -6px 9px #ecc3e7;
+  text-align: center;
+}
+/* fonte do Google */
+raleway-<uniquifier> {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/* ondas */
+.custom-shape-divider-top-1707265856 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1707265856 svg {
+  position: relative;
+  display: block;
+  width: calc(142% + 1.3px);
+  height: 99px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1707265856 .shape-fill {
+  fill: #ddb6d8;
+}
